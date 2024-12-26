@@ -1,0 +1,105 @@
+\documentclass{standalone}
+
+\title{Equations}
+\author{Giacomo Ellero}
+
+% \usepackage{parskip} % for no indentation
+% \usepackage[a4paper,margin=1.5cm]{geometry} % to adjust margins
+
+
+% *------------------*
+% | *** Packages *** |
+% *------------------*
+
+\usepackage{amssymb}   % for varnothing and other weirds symbols
+\usepackage{amsmath}   % basically everything
+\usepackage{mathtools} % for underbrace, arrows, and a lot of other things
+\usepackage{mathrsfs}  % for "mathscr"
+\usepackage{bm}        % for bold math symbols
+\usepackage[arrowdel]{physics}   % for derivatives and lots of operators
+\usepackage{dsfont}    % for \mathds{1}
+
+\usepackage{cancel}    % for canceling terms
+% \renewcommand{\CancelColor}{\color{red}}
+
+% *-------------------*
+% | *** Shortcuts *** |
+% *-------------------*
+
+% Operators
+\newcommand{\gt}{>}
+\newcommand{\lt}{<}
+\newcommand{\indep}{\perp \!\!\! \perp}
+
+% Sets
+\newcommand{\C}{\mathds{C}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\Z}{\mathds{Z}}
+
+% Big-O and small-o notation
+\renewcommand{\O}{\mathcal{O}}
+% https://tex.stackexchange.com/questions/191059/how-to-get-a-small-letter-version-of-mathcalo
+\renewcommand{\o}{
+    \mathchoice
+    {{\scriptstyle\mathcal{O}}}% \displaystyle
+    {{\scriptstyle\mathcal{O}}}% \textstyle
+    {{\scriptscriptstyle\mathcal{O}}}% \scriptstyle
+    {\scalebox{.6}{$\scriptscriptstyle\mathcal{O}$}}%\scriptscriptstyle
+}
+
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\oneover}[1]{\frac{1}{#1}}
+
+% *-------------------*
+% | *** Utilities *** |
+% *-------------------*
+
+% Skip line after theorem or proof title, useful when using itemize or enumerate
+\newcommand{\skiplineafterproof}{$ $\par\nobreak\ignorespaces}
+
+% Use underbar in math mode to define vectors
+% Sorcery taken from https://tex.stackexchange.com/a/163284
+\makeatletter
+\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
+\makeatother
+
+\newcommand{\uvec}[1]{\munderbar{\bm{#1}}}
+
+% https://tex.stackexchange.com/a/5255
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% STATS
+
+\newcommand{\cov}{{\operatorfont cov}}
+\renewcommand{\var}{{\operatorfont var}}
+\newcommand{\MSE}{{\operatorfont MSE}}
+\newcommand{\E}{\mathds{E}}
+% Distributions
+\newcommand{\Bernoulli}{{\operatorfont Bernoulli}}
+\newcommand{\Binomial}{{\operatorfont Binomial}}
+\newcommand{\Normal}{{\operatorfont N}}
+\newcommand{\GammaD}{{\operatorfont Gamma}}
+\newcommand{\Poisson}{{\operatorfont Poisson}}
+\newcommand{\Exponential}{{\operatorfont Exponential}}
+\newcommand{\BivariateNormal}{{\operatorfont BivariateN}}
+\newcommand{\Uniform}{{\operatorfont Uniform}}
+
+\newcommand{\convas}{\xrightarrow{\operatorfont a.s.}}
+\newcommand{\convdist}{\xrightarrow{\operatorfont d}}
+\newcommand{\convprob}{\xrightarrow{\operatorfont P}}
+\newcommand{\convmean}[1]{\xrightarrow{#1}}
+
+% DT
+\newcommand{\Gr}{{\operatorfont Gr}}
+
+% \renewcommand{\vec}[1]{\bm{#1}}
+
+% PHYSICS
+\usepackage{siunitx}
+
+
+\begin{document}
+$\displaystyle
