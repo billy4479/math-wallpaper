@@ -5,4 +5,4 @@ shell-escape: false
 additional-flags: []
 include-files:
   - "result/*.tex"
-parallel: true
+parallel: 0
