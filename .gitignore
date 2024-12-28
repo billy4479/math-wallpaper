@@ -1,6 +1,6 @@
 /build
 /result
 /.direnv
-/test.png
+*.png
 math-wallpaper
 

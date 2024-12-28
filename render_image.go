@@ -90,7 +90,11 @@ func render() {
 	radial := true
 
 	out := image.NewRGBA(image.Rect(0, 0, int(w), int(h)))
-	bg := image.NewUniform(catppuccin.Frappe.Base())
+
+	// https://github.com/catppuccin/go/issues/29
+	r, g, b, _ := catppuccin.Frappe.Base().RGBA()
+	bg := image.NewUniform(color.RGBA{R: uint8(r), G: uint8(g), B: uint8(b), A: 0xff})
+
 	draw.Copy(out, image.Point{}, bg, out.Bounds(), draw.Src, nil)
 
 	for _, formula := range formulas {
@@ -130,7 +134,7 @@ func render() {
 		draw.BiLinear.Scale(out, dstRect, formula, formula.Bounds(), draw.Over, nil)
 	}
 
-	f, err := os.Create("test.png")
+	f, err := os.Create("out.png")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
