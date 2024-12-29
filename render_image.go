@@ -92,7 +92,7 @@ func render() {
 	out := image.NewRGBA(image.Rect(0, 0, int(w), int(h)))
 
 	// https://github.com/catppuccin/go/issues/29
-	r, g, b, _ := catppuccin.Frappe.Base().RGBA()
+	r, g, b, _ := catppuccin.Frappe.Crust().RGBA()
 	bg := image.NewUniform(color.RGBA{R: uint8(r), G: uint8(g), B: uint8(b), A: 0xff})
 
 	draw.Copy(out, image.Point{}, bg, out.Bounds(), draw.Src, nil)
