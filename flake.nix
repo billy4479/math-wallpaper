@@ -64,6 +64,7 @@
           nativeBuildInputs = with pkgs; [
             go
             gopls
+            golangci-lint
 
             texPkgs
           ];
