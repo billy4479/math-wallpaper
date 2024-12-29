@@ -6,9 +6,9 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       flake-utils,
+      ...
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -63,6 +63,7 @@
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
             go
+            gopls
 
             texPkgs
           ];
